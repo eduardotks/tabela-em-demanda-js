@@ -1,0 +1,59 @@
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContext
+@model List<Home>
+
+
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>HTML Table</h2>
+    <div class="table-responsive-xl">
+
+        <table id="tableResult" class="table table-bordered table-striped">
+            <!--search-->
+            <thead class="thead-dark">
+                <tr>
+
+                    <th class="center" scope="col">Código</th>
+                    <th class="center" scope="col">Tipo</th>
+                    <th class="center" scope="col">Título</th>
+                    <th class="center" scope="col">Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Home item in Model)
+                {
+                    <tr>
+                        <td class="center" style="font: message-box">@item.Codigo</td>
+                        <td class="center" style="font: message-box">@item.Tipo</td>
+                        <td class="center" style="font: message-box">@item.Titulo</td>
+                        <td class="center" style="font: message-box">@item.Link</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+
+    </script>
+</body>
